@@ -1,3 +1,4 @@
+
 package lostincoordinates;
 import battlecode.common.*;
 import java.lang.Math;
@@ -539,5 +540,3 @@ public strictfp class RobotPlayer
         }
     }
 }
-
-
