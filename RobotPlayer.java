@@ -1,5 +1,6 @@
-package lectureplayer;
+package lostincoordinates;
 import battlecode.common.*;
+@SuppressWarnings("ALL")
 
 public strictfp class RobotPlayer {
     static RobotController rc;
@@ -15,8 +16,13 @@ public strictfp class RobotPlayer {
         Direction.WEST,
         Direction.NORTHWEST
     };
-    static RobotType[] spawnedByMiner = {RobotType.REFINERY, RobotType.VAPORATOR, RobotType.DESIGN_SCHOOL,
-            RobotType.FULFILLMENT_CENTER, RobotType.NET_GUN};
+    static RobotType[] spawnedByMiner = {
+            RobotType.REFINERY,
+            RobotType.VAPORATOR,
+            RobotType.DESIGN_SCHOOL,
+            RobotType.FULFILLMENT_CENTER,
+            RobotType.NET_GUN
+    };
 
     static int turnCount;
     static MapLocation hqLoc;
@@ -25,7 +31,7 @@ public strictfp class RobotPlayer {
      * run() is the method that is called when a robot is instantiated in the Battlecode world.
      * If this method returns, the robot dies!
      **/
-    @SuppressWarnings("unused")
+    //@SuppressWarnings("unused")
     public static void run(RobotController rc) throws GameActionException {
 
         // This is the RobotController object. You use it to perform actions from this robot,
