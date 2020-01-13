@@ -1,40 +1,40 @@
-// TAKEN FROM https://github.com/battlecode/battlecode20-scaffold/tree/master/src
-//MAHINS_CODE
-package battlecode_2020;
+package lostincoordinates;
+
 import battlecode.common.*;
+@SuppressWarnings("ALL")
 
 public strictfp class RobotPlayer {
     static RobotController rc;
     static Direction[] directions = {
-        Direction.NORTH,
-        Direction.NORTHEAST,
-        Direction.EAST,
-        Direction.SOUTHEAST,
-        Direction.SOUTH,
-        Direction.SOUTHWEST,
-        Direction.WEST,
-        Direction.NORTHWEST
+            Direction.NORTH,
+            Direction.NORTHEAST,
+            Direction.EAST,
+            Direction.SOUTHEAST,
+            Direction.SOUTH,
+            Direction.SOUTHWEST,
+            Direction.WEST,
+            Direction.NORTHWEST
     };
-    static RobotType[] spawnedByMiner = {RobotType.REFINERY, 
-            RobotType.VAPORATOR, RobotType.DESIGN_SCHOOL,
-            RobotType.FULFILLMENT_CENTER, RobotType.NET_GUN};
 
+    static RobotType[] spawnedByMiner = {
+            RobotType.REFINERY,
+            RobotType.VAPORATOR,
+            RobotType.DESIGN_SCHOOL,
+            RobotType.FULFILLMENT_CENTER,
+            RobotType.NET_GUN
+    };
     static int turnCount;
     static MapLocation hqLoc=null, souploc=null;
-    static Boolean reached=false;
-
     /**
      * run() is the method that is called when a robot is instantiated in the Battlecode world.
      * If this method returns, the robot dies!
      **/
-    @SuppressWarnings("unused")
     public static void run(RobotController rc) throws GameActionException {
 
         // This is the RobotController object. You use it to perform actions from this robot,
         // and to get information on its current status.
         RobotPlayer.rc = rc;
         turnCount = 0;
-
         System.out.println("I'm a " + rc.getType() + " and I just got created!");
         while (true) {
             turnCount += 1;
@@ -74,7 +74,6 @@ public strictfp class RobotPlayer {
     }
 
     static void runMiner() throws GameActionException {
-
         // System.out.println(BodyInfo.getLocation()+": is the locatoin of CENTER");
         if(hqLoc == null){
             //getting the miners search for hq location
